@@ -4,6 +4,7 @@ import { ShoppingBag, Search, Menu } from "lucide-react";
 import { motion, useScroll, useMotionValueEvent } from "framer-motion";
 import { useState } from "react";
 import { EcoToggle } from "@/components/EcoToggle";
+import { AuthButton } from "@/components/AuthButton";
 export function Header() {
     const [hidden, setHidden] = useState(false);
     const { scrollY } = useScroll();
@@ -47,6 +48,7 @@ export function Header() {
                     <button className="btn-text">
                         <ShoppingBag size={20} />
                     </button>
+                    <AuthButton />
                 </div>
             </div>
         </motion.header>
