@@ -6,6 +6,7 @@ import { useState } from "react";
 import { EcoToggle } from "@/components/EcoToggle";
 import { useCart } from "@/lib/CartContext";
 import { CartSidebar } from "@/components/CartSidebar";
+import { AuthButton } from "@/components/AuthButton";
 
 export function Header() {
     const [hidden, setHidden] = useState(false);
@@ -45,6 +46,7 @@ export function Header() {
                     </nav>
                     <div className="header-actions flex gap-4 items-center">
                         <EcoToggle />
+                        <AuthButton />
                         <button className="btn-text">
                             <Search size={20} />
                         </button>
