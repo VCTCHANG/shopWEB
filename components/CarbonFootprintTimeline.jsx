@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { TreePine, Factory, Ship, Plane, Truck, Package, Leaf, Loader2 } from "lucide-react";
+import CarbonEquivalents from "@/components/CarbonEquivalents";
 
 const getTransportIcon = (method) => {
     switch (method) {
@@ -142,7 +143,7 @@ export default function CarbonFootprintTimeline({ calcParams }) {
                     </div>
 
                     {/* Total Result */}
-                    <motion.div 
+                    <motion.div
                         initial={{ opacity: 0, scale: 0.95 }}
                         animate={{ opacity: 1, scale: 1 }}
                         transition={{ delay: 1.8, type: "spring" }}
@@ -154,6 +155,8 @@ export default function CarbonFootprintTimeline({ calcParams }) {
                             <span className="text-xs text-[#A0A0A0]">{data.unit}</span>
                         </div>
                     </motion.div>
+
+                    <CarbonEquivalents totalKg={data.total} delay={2.2} />
                 </div>
             )}
         </div>

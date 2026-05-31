@@ -24,9 +24,8 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en" suppressHydrationWarning>
       <body className={`${inter.variable} ${playfair.variable} antialiased`}>
-        {/* 👉 把 ThemeProvider 包在這裡，並加上 attribute="class" 給 Tailwind */}
         <CartProvider>
-          <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
+          <ThemeProvider attribute="class" defaultTheme="light" enableSystem={false}>
             <SmoothScroll>
               <Header />
               {children}
