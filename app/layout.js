@@ -3,6 +3,7 @@ import "./globals.css";
 import { Header } from "@/components/Header";
 import SmoothScroll from "@/components/SmoothScroll";
 import { ThemeProvider } from "@/components/ThemeProvider"; // 👉 加入這行：引入剛剛的 Provider
+import { AuthProvider } from "@/components/AuthProvider";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -25,12 +26,14 @@ export default function RootLayout({ children }) {
     <html lang="en" suppressHydrationWarning>
       <body className={`${inter.variable} ${playfair.variable} antialiased`}>
         {/* 👉 把 ThemeProvider 包在這裡，並加上 attribute="class" 給 Tailwind */}
-        <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
-          <SmoothScroll>
-            <Header />
-            {children}
-          </SmoothScroll>
-        </ThemeProvider>
+        <AuthProvider>
+          <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
+            <SmoothScroll>
+              <Header />
+              {children}
+            </SmoothScroll>
+          </ThemeProvider>
+        </AuthProvider>
       </body>
     </html>
   );
